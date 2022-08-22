@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!--  Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2><a class="inactive underlineHover" href="/Register.html"> Sign Up </a></h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://i.ibb.co/7GqM15f/lbit.jpg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="button" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+  <style>#phone {
+  width: 383px;
+}
+</style>
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://i.ibb.co/7GqM15f/lbit.jpg" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- phone Form -->
+
+
+        <input type="text" id="phone" class="fadeIn second" name="phone" placeholder="Mobile Number">
+        <input type="text" id="password" class="fadeIn third" name="phone" placeholder="   Password">
+        <input type="text" style="width:120px;" id="otp" class="fadeIn fifth" name="phone" placeholder="Otp">
+         <input type="button" style="width: 240px;padding: 15px 20px;" class="fadeIn sixth" value="Get Verification Code">
+         
+         <input type="button" style="background-color: #03fc90;" class="fadeIn seventh" value="Register">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+  </div>
+     <div class="alert alert-info" style="display: none;"></div>
+   <script>
+   const phoneInputField = document.querySelector("#phone");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+   });
+   const info = document.querySelector(".alert-info");
+   
+   function process(event) {
+     event.preventDefault();
+   
+     const phoneNumber = phoneInput.getNumber();
+   
+     info.style.display = "";
+     info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+   }
+   function getIp(callback) {
+     fetch('https://ipinfo.io/json?token=<your token>', { headers: { 'Accept': 'application/json' } })
+       .then((resp) => resp.json())
+       .catch(() => {
+         return {
+           country: 'us',
+         };
+       })
+       .then((resp) => callback(resp.country));
+   }
+   const phoneInput = window.intlTelInput(phoneInputField, {
+  preferredCountries: ["us", "co", "in", "de"],
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+ </script>
+ <script>
+   const phoneInputField = document.querySelector("#phone");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+   });
+ </script>
+  <script src="main.js"></script>
+</body>
+</html>
